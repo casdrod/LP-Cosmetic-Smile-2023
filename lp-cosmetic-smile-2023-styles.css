@@ -689,6 +689,7 @@ header .phy:hover {
   line-height: 1.2;
 }
 #banner figure p:nth-of-type(2) {
+  margin-right: 50px;
   text-align: right;
   font-size: 18px;
   text-transform: uppercase;
@@ -709,11 +710,12 @@ header .phy:hover {
 #banner h1 {
   margin: 20px auto;
   line-height: 1.1;
+  font-weight: 400;
+  line-height: 1.2;
 }
-#banner h1 b {
-  display: block;
-  margin: 20px auto;
-  font-style: normal;
+#banner h1 span {
+  color: #002653;
+  font-weight: 700;
 }
 #banner.playing .flex-ed {
   display: block;
@@ -783,11 +785,16 @@ header .phy:hover {
   text-align: justify;
   font-size: 20px;
   line-height: 1.5;
-  margin-bottom: 0;
+  margin: 0 auto;
+}
+#helped h2 span {
+  color: #002653;
+  font-weight: 700;
 }
 #helped .h3 {
   font-size: 32px;
   text-align: left;
+  font-weight: 400;
 }
 #helped author {
   display: block;
@@ -895,7 +902,7 @@ footer figure {
   padding: 30px 30px 10px;
   flex: 1;
   margin: 0 20px;
-  flex: 0 1 400px;
+  flex: 0 1 360px;
 }
 footer figure .title {
   color: #000;
@@ -1181,6 +1188,12 @@ button:focus {
   }
   .title {
     margin: 0 auto 10px;
+  }
+  footer {
+    padding: 0;
+  }
+  footer .container {
+    padding: 0;
   }
   footer article {
     flex: 0 1 340px;
