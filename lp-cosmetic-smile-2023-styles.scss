@@ -21,12 +21,11 @@ img {max-width: 100%;}
 .flex-ed {  -webkit-box-orient: horizontal; -webkit-box-direction: normal; flex-flow: row wrap; -ms-flex-flow: row wrap; }
 .col-flex-ed { -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-flow: column; -ms-flex-flow: column;}
 
-$primary: #FFD960;
-$secondary:#E9E9E9;
-$tertiary:#002653;
-$font: 'Open Sans', sans-serif;
-$font2: 'Lora', serif;
-$font3: 'Poppins', sans-serif;
+$primary: #1C3730;
+$secondary:#7C9A92;
+$tertiary:#E86823;
+$font: 'Inter', sans-serif;
+$font2: 'DM Serif Display', serif;
 $text: #000; 
 
 [data-player],[data-vimeo],[data-embed]{position:relative}
@@ -75,7 +74,7 @@ $text: #000;
 /* ---------------- page foundation ---------- */
 
 body { position: relative; background-color: #fff; font-family: $font; font-size: 17px; font-weight: 400; line-height: 1.2; text-align: center;}
-p {font: 400 20px/25px $font3;  color: $text;}
+p {font: 400 20px/25px $font;  color: $text;}
 a { display: inline-block; text-decoration: none; cursor: pointer; color: $tertiary; }
 h1, h2, h3, .h3 {font-family: $font2; font-weight: 700; line-height: 1.2; text-align: center;}
 h1 {  margin: 0;  color: $text; font-size: 40px; letter-spacing: -0.92px;}
@@ -83,30 +82,76 @@ h2 {  color: $text; font-size: 45px;font-weight: 400; margin: 10px auto;}
 h3, .h3 {color: $text; font-size: 20px; line-height: 1.41; }
 h4 { font-size: 28px; line-height: 1.41; }
 
-header { position: relative; background-color: white;margin-bottom: -30px;
-    .flex-ed {  justify-content: space-between; align-items: center; position: relative;max-width: 1400px;
-        z-index: 1100;}
-    .btn-alt {  margin: 0; margin-bottom: 30px;color: $text;text-shadow: none;
-        &:hover {color: #fff;}
-        span {letter-spacing: 3px;font-size: 29px;}
+/* header */
+header{position:relative;padding:0;z-index:100;background-color: #fff;
+    address{padding:0 8px;}
+    .address{text-align:left;display:flex;color: #000;font-size:20px;line-height:1.25;font-weight:400;letter-spacing:.55px;
+        &:hover{color: $tertiary;}
+        i:before {color: $tertiary;font-size: 22px;margin-left: -10px;margin-right: 15px;}
     }
-    a{ display: block; text-align: right; }
-    .phone {color: $primary; font:700 35px/1.2 $font;  text-align: center;margin-bottom: 30px;
-        span {display: block; text-transform: uppercase; font: 700 14px/1 $font; color: #000; }
-        &:hover { color: $tertiary;}
+    .pho{display:flex;color:#000;font:700 35px/30px $font;margin-bottom: 12px;
+        span{display:block;color:#FFF;font-size:14px;font-weight:500;text-transform:uppercase;font-family:$font}
+        &:hover{color: $tertiary;}
+        i {display: flex;align-items: center;
+            &:before {color: $tertiary;font-size: 22px;margin-left: 0px;margin-right: 15px;}
+        }
     }
-    .phy {color: $text; font-size: 18px; text-align:center; margin-bottom: 30px;&:hover { color: $tertiary;} }
+	#nav{padding: 20px 10px;display:flex;flex-wrap:wrap;max-width:1350px;justify-content:space-between;margin:auto;align-items:center;
+		.btn{min-width: 350px;display: flex;text-shadow:none;flex-wrap: wrap;align-items:center;justify-content: center;margin:0;font-size:24px;background-color: $tertiary;color: #fff;font-family: $font;font-weight: 400;border-radius: 30px;text-transform:none;
+			i:before {margin-right: 10px;}
+            &:hover {background-color: $primary;}
+			span {text-transform: uppercase;font-weight: 700;font-size:24px;margin: 0 8px 0 0;}
+		}
+        #header-details {text-align:left;}
+		#mobile-btns {
+			width: 100%;display:flex;
+			> * {flex: 1;}
+			.btn {
+				display: flex;
+				flex-wrap: wrap;
+				padding: 10px;
+				justify-content: center;
+				border-radius: 0;font-weight: 700;
+				font-size: 16px;
+				min-width: auto;
+				text-transform: uppercase;
+				span {
+					width: 100%;font-size: 28px;
+				  }
+			}
+			.phone, .btn {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-content: center;
+				span {
+					width: 100%;
+				}
+			  }
+			.phone {background-color: #353C3F;color: #fff;font-size: 20px;line-height: 1.3;
+				span {text-transform: uppercase;font-size: 16px;font-weight: 700;letter-spacing: 1px;}
+			}
+			#mobile-special {
+				.container {
+					margin: 10px 0;border-top: 2px solid #AFB1B1;border-bottom: 2px solid #AFB1B1;padding: 5px;
+					h4 {color: $tertiary;font-size: 22px;margin: 0;}
+					small {text-transform: uppercase;font-size: 14px;letter-spacing: .7px;font-weight: 700;}
+				}
+			}
+		  }
+	}	
 }
+
 .fix-nav header {
     position: fixed;
-    width: 100%;padding: 10px;
+    width: 100%;padding: 0;
     left: 0;
     top: 0;
     right: 0;
     animation: .8s slideIn both;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.6);
     z-index: 100;
-   .logo {margin-bottom: 0; flex: 0 1 400px;} 
+   .logo {margin-bottom: 0;} 
    .phy, .phone, .btn-alt {margin-bottom: 0;}
    .flex-ed {max-width: 1400px;}
 }
@@ -125,7 +170,6 @@ header { position: relative; background-color: white;margin-bottom: -30px;
     border-radius: 3px;
     background-color: $primary;
     font: 600 14px/1.1 $font; text-transform: uppercase;
-    text-shadow: 0.6px 1.9px 6px rgba(3, 3, 3, 0.35);
     transition: all ease 0.3s;
     padding: 12px 20px;
     span {display: block; font-size: 38px; line-height: 1;}
@@ -141,101 +185,117 @@ header { position: relative; background-color: white;margin-bottom: -30px;
     &:hover i {border-color: #fff;}
 }
 
-#banner { overflow: hidden; background-color: #E9E9E9;
+#banner { overflow: hidden; background-color: #E5E5E5;padding: 30px 10px;
     .flex-ed {flex-wrap: nowrap; padding: 30px 10px; max-width: 1350px; margin: auto; position: relative; align-items: center; justify-content: space-around;}
-    figure { order: -1; position: relative; padding: 0 10px; flex: 0 1 680px;
+    figure {  margin: 0;
+        position: relative;
+        text-align: center;
+        img {
+          width: 100%;
+          position: relative;
+          width: 100%;
+        }
         p { font-size: 26px; text-align: left; line-height: 1.2;}
         p:nth-of-type(2) {margin-right: 50px;text-align: right; font-size: 18px;text-transform:uppercase;font-family: $font;font-weight: 700;}
     }
 
     article {position: relative; max-width: 100%; z-index: 10; margin-top: 20px; padding: 10px;
-        p { font-size: 28px; line-height: 1.3; }
+        > img {margin: 20px auto;}
+        h2 {font-size: 50px;}
+        p { font-size: 20px; line-height: 25px; text-transform: uppercase;max-width: 400px;margin: 20px auto;letter-spacing: 4px;}
     }
-    h1 {margin: 20px auto; line-height: 1.1;font-weight: 400;line-height: 1.2;
-        span {color: #002653;
-            font-weight: 700;}
+    h1 {margin: 20px auto 0; line-height: 1.1;font-weight: 400;line-height: 1.2;font-size: 90px;
+        span {text-transform: uppercase;}
     }
     &.playing .flex-ed {display: block; max-width: 1000px; margin: auto;}
 }
 
-#right {position: relative; background-color: $tertiary;padding: 60px 10px;
+#right {position: relative;background-repeat: no-repeat;
+    background-size: cover; background-image: url(assets/images/lp-cosmetic-2023-right-bkg.jpg);padding: 60px 10px;
     .contain {max-width: 1140px; margin: 10px auto;text-align: center;}
-    p {font-size: 17px;color: #fff; }
-    h2 {color: #fff;}
+    p {font-size: 25px;color: #fff; line-height: 30px;}
+    h2 {color: #fff;font-size: 50px;margin-bottom: 35px;z-index: 1100;
+        position: relative;}
+    &:before {content: ''; background: url(assets/images/lp-cosmetic-right-before.png);position: absolute; top: -150px; right: 65px;width: 362px; height: 312px;}
 }
 
-#helped {padding: 40px 10px; background-color: #fff; 
+#helped {padding: 50px 10px; background-color: #fff; 
     .flex-ed {max-width: 1170px; margin: 50px auto; justify-content: space-around; padding: 30px 10px; flex-wrap: nowrap; }
     .flex-ed:nth-of-type(2) figure {order: -1;}
     figure {padding: 10px; flex: 0 1 500px; position: relative;
         .smile-before {position: absolute; right: 0; bottom: 0;}
     }
-    article {flex: 0 1 540px; position: relative; padding: 10px 20px 10px 60px; 
-        &:before {content: '\e838'; position: absolute; left: 27px;
-            top: -123px;
-            color: #FFD960;
-            font-size: 220px;
-            font-family: fontello;
-            transform: scaleX(-1);
-            opacity: 0.3;}
+    article {flex: 0 1 540px; position: relative; padding: 10px 20px 10px 60px; display: flex;
+        flex-wrap: wrap;
+        align-content: center;
         p {text-align: justify; font-size: 20px; line-height: 1.5; margin: 0 auto;}
       }
-    h2 span {color: #002653;
-    font-weight: 700;}
-    .h3 {font-size: 32px; text-align: left; font-weight: 400;}
+    h2 {font-size: 70px;}
+    h3 {font-size: 40px; text-align: left; font-weight: 400;margin: 20px 0;}
     author {display: block; font-family: $font2; text-align: right; font-size: 32px; text-transform: uppercase; }
+    > .btn {background: $tertiary;color: #fff;font-size: 20px;text-transform:none;font-weight: 400;
+        span {font-size: 24px;font-weight: 800;text-transform: uppercase;letter-spacing: 2px;}
+        &:hover {background: $primary;}
+    }
 }
-#dentists { padding: 60px 10px 40px; background: $secondary;
+
+#dentists { padding: 60px 10px 40px; background: $primary;
     .flex-ed {max-width: 1300px; margin: 30px auto; display: flex; justify-content: space-around; flex-wrap: wrap; }
-    article {flex: 0 1 45%; padding: 10px; text-align: left;  margin: 10px auto;
+    article {flex: 0 1 45%; padding: 10px; text-align: left; margin: 10px auto;display: flex;
+        flex-wrap: wrap;
+        align-content: center;
         img {float: left;    margin: 0 10px 10px -20px; }
-        p {text-align: justify;}
-        h2 {text-align: left;
+        p {text-align: justify;color: #fff;font-size: 25px;line-height: 30px;}
+        h2 {text-align: left;color: #fff;font-size: 50px;margin: 10px;
             span {color: $tertiary;font-weight: 700;}
         }
     }
-   .btn {min-width: 300px;;}
+   .btn {min-width: 300px;background-color: $tertiary;font-size: 24px;
+        &:hover {background-color: $secondary;}
+    }
 }
 
-#assoc {background-color: $tertiary; padding: 30px 20px;
+#assoc {background-color: $secondary; padding: 20px;
+    h2 {font-size: 15px;text-transform: uppercase;font-weight: 700;color: #fff;font-family: $font;letter-spacing: 3px;}
     .flex-ed {justify-content: center;align-items: center;max-width: 1400px;margin: auto;}
 }
 
 footer { padding: 70px 0 0; position: relative; background-color: #333333; 
     .container {display: flex; justify-content: space-around; max-width: 1310px; padding: 10px 0;margin-bottom: 60px;}
-    article {   display: flex; flex-direction: column; justify-content: center; position: relative;  padding: 35px 5px; margin: 0; background-color: $secondary; flex: 0 0 350px;
-        .title {margin-top: 10px;}
+    article {   display: flex; flex-direction: column; justify-content: center; position: relative;  padding: 30px; margin: 0; border:2px solid #fff; max-height: 470px;flex: 0 0 370px;
+        .title {margin-top: 10px;color: #fff;width: 100%; font-family: $font2; font-size: 35px; font-weight: 400;  line-height: 1.2;}
+        .hours {font-size: 16px; font-weight: 400; margin: 10px 20px; color: #fff; text-align: left; display: table;
+            span {display: flex;
+                justify-content: space-between;
+                label {display: inline-block; width: 90px; }
+            }
+        }
+        .phone {color: $tertiary; font: 700 34px/1 $font; display: block; margin: 20px 10px; display: block;
+            &:hover {color: $secondary;}
+        } 
+        .phy {color: #fff;  margin: 0 auto 30px; display: block;font-size: 20px;
+            &:hover  {color: $secondary;}
+        }
+        &:last-of-type {
+            .title:first-of-type {margin-bottom: auto;}
+        }
+    }
+    .simple {
         form {margin: 20px 0;
-            .btn {width: 230px;
-                color: #000;
+            input, textarea {transition: 0.3s all ease;box-shadow: none;width: auto;}
+            textarea {height: 100px!important;}
+            input:focus, textarea:focus {border-top: 10px solid $secondary;height: 50px;}
+            .btn {width: 256px;
+                color: #fff;margin-top: 0;
+                background: $tertiary;
                 text-shadow: none;
                 font-size: 20px;
-                &:hover {color: #fff;}
+                &:hover {background: $secondary}
             }
         }
     }
-    article:nth-of-type(2) {order: -1;}
-    figure { display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        align-items: center;background-color: $secondary; text-align: justify; text-align-last: center; padding: 30px 30px 10px; flex: 1; margin: 0 20px; flex: 0 1 360px;
-        .title {color: $text;margin-bottom: 10px;}
-        p { margin: 10px auto; letter-spacing: -0.4px; font-family: $font3;
-            font-size: 16px;
-line-height: 23px; text-align-last: center; color: $text;}
-    }
-    .hours {font-size: 16px; font-weight: 400; margin: auto; color: $text; text-align: left; display: table;
-        span {display: flex;
-            justify-content: space-between;
-            label {display: inline-block; width: 90px; }
-        }
-    }
-    .title { color: $text;width: 100%; font-family: $font; font-size: 28px; font-weight: 400;  line-height: 1.2;}
-    .phone {color: #E8CF65; font: 700 34px/1 $font; display: block; margin: 10px auto; display: block;
-        &:hover {color: $primary;}
-    } 
-    .phy {color: $text;  margin: 0 auto 15px; display: block;font-size: 20px;
-        &:hover  {color: $tertiary;}
+    #started {
+        p {font-size: 16px;color: #fff;}
     }
 }
 
@@ -269,8 +329,13 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
     :before {font-size: 19px;font-family:'fontello';font-weight: 700; margin:0; font-style: normal; content: '\e80f \e80f \e80f \e80f \e80f'; color: #f4c73b; padding-right: 10px;letter-spacing: 2px;}
 }
 
-.copy {margin-top: 40px;background-color: #000;color: #fff; margin: auto; padding:40px 10px;font: 400 11px/1.1 $font;
-    a { margin: auto; font: 400 11px/1.1 $font; color: $primary; }
+.copy {display:flex;flex-wrap:wrap;justify-content: center;align-items:center;background-color: #000;color: #fff; margin: auto; padding: 20px 10px;font: 400 16px/1.1 $font;
+    a {margin: 0; font: 400 16px/1.1 $font; color: $tertiary;
+        &:last-of-type {margin: 0 10px;}
+    }
+    span {margin: 5px;
+        &:not(:first-of-type) {margin: 10px;}
+    }
     a:hover { color: #fff; }
 }
 
@@ -289,6 +354,7 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
         border-radius: 5px;
         font-size: 16px;
         color: $text;
+        &:placeholder {color: #000;}
     }
     textarea {  margin-bottom: 30px;}
     textarea, input, select {  border: none; box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.5); }
@@ -320,35 +386,66 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
     figure {flex: 0 1 600px; margin: 0 auto 10px;}
   }
 }
-
-@media(max-width: 1000px) {
-    header {
-        .flex-ed {justify-content: space-around; padding: 5px;}
+@media (min-width: 1000px) {
+	#mobile-btns {
+	  display: none!important;
+	}
+}
+@media (max-width: 1000px) {
+    header {margin-bottom: 0;
+        .flex-ed {justify-content: space-around; padding: 0;}
         .phone {padding: 0 15px; font-size: 20px;}
-        .btn-alt {order: 1;}
-        .phy {display: none; }
+        #nav {padding: 0;
+            .btn {
+                span {margin: auto;}
+            }
+        }
+        .phy,#nav .btn, #header-details {display: none; }
+        .logo {margin: 10px auto}
     }
+    .fix-nav header {padding: 0;}
     #banner {
         .flex-ed {flex-wrap: wrap; padding: 0 10px 20px; }
-        article {margin: auto;}
-        figure {order: 0; flex: 0 1 700px;}
-    }
-    #right {padding: 20px 10px 40px;}
-    #helped {
-        .flex-ed {display: block; margin: auto;}
-        figure {margin-top: 20px;}
-    }
-    #dentists {
-        article {flex: 0 1 850px;
-            img {margin: 0 20px 10px 5px;}
-            p {margin-top: 5px;}
+        article {margin: auto;
+            h2 {font-size: 40px;}
         }
+        figure {margin: 40px auto 10px;}
+        h1 {font-size: 70px;line-height: 75px;} 
+    }
+    #right {padding: 50px 10px;background: $secondary;
+        h2 {font-size: 37px;}
+        &:before {content: none;}
+        &:after {content: url(assets/images/lp-cosmetic-right-after.png);opacity: 0.3;}
+    }
+    #helped {
+        .flex-ed {flex-wrap:wrap; margin: auto;padding: 20px 10px;}
+        h2 {font-size: 54px;}
+        figure {margin-top: 20px;order: -1;}
+        h3 {text-align:center;line-height: 40px;width: 100%;}
+        article {
+            p {text-align:center;}
+        }
+    }
+    #dentists {padding: 10px;
+        article {flex: 0 1 850px;order: -1;
+            img {margin: 0 20px 10px 5px;}
+            h2 {width: 100%;}
+            p {margin-top: 5px;width: 100%;text-align: center;}
+        }
+        figure {margin: 10px;}
     }
     .title {margin: 0 auto 10px;}
     footer {padding: 0;
-        .container {padding: 0;}
-        article {flex: 0 1 340px;}
-        .phone {margin: 10px auto;}
+        .container {padding: 40px 20px;}
+        article {flex: 0 1 340px;max-height: none;
+            .title {font-size: 34px;}
+            &:last-of-type {
+                .title {
+                    &:first-of-type {margin-bottom: 20px;}
+                }
+            }
+            .phone {margin: 10px auto;font-size: 32px;}
+        }
     }
 }
 
@@ -365,8 +462,7 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
 @media (max-width: 590px) {
     header {
         .flex-ed {display: block; margin: auto;}
-        .logo {margin: 0 auto;padding: 10px 20px;}
-        .btn-alt {display: table;  margin: 10px auto;}
+        .logo {padding: 10px 20px;}
     }
     #helped {
         author {font-size: 20px;}
