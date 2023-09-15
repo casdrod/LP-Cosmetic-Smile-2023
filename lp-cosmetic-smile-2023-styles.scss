@@ -21,11 +21,11 @@ img {max-width: 100%;}
 .flex-ed {  -webkit-box-orient: horizontal; -webkit-box-direction: normal; flex-flow: row wrap; -ms-flex-flow: row wrap; }
 .col-flex-ed { -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-flow: column; -ms-flex-flow: column;}
 
-$primary: #1C3730;
-$secondary:#7C9A92;
-$tertiary:#E86823;
-$font: 'Inter', sans-serif;
-$font2: 'DM Serif Display', serif;
+$primary: #003041;
+$secondary:#26A2BE;
+$tertiary:#27C4DB;
+$font: 'Maven Pro', sans-serif;
+$font2: 'Frank Ruhl Libre', serif;
 $text: #000; 
 
 [data-player],[data-vimeo],[data-embed]{position:relative}
@@ -77,8 +77,8 @@ body { position: relative; background-color: #fff; font-family: $font; font-size
 p {font: 400 20px/25px $font;  color: $text;}
 a { display: inline-block; text-decoration: none; cursor: pointer; color: $tertiary; }
 h1, h2, h3, .h3 {font-family: $font2; font-weight: 700; line-height: 1.2; text-align: center;}
-h1 {  margin: 0;  color: $text; font-size: 40px; letter-spacing: -0.92px;}
-h2 {  color: $text; font-size: 45px;font-weight: 400; margin: 10px auto;}
+h1 {  margin: 0;  color: $primary; font-size: 40px; letter-spacing: -0.92px;}
+h2 {  color: $primary; font-size: 45px;font-weight: 400; margin: 10px auto;}
 h3, .h3 {color: $text; font-size: 20px; line-height: 1.41; }
 h4 { font-size: 28px; line-height: 1.41; }
 
@@ -97,7 +97,7 @@ header{position:relative;padding:0;z-index:100;background-color: #fff;
         }
     }
 	#nav{padding: 20px 10px;display:flex;flex-wrap:wrap;max-width:1350px;justify-content:space-between;margin:auto;align-items:center;
-		.btn{min-width: 350px;display: flex;text-shadow:none;flex-wrap: wrap;align-items:center;justify-content: center;margin:0;font-size:24px;background-color: $tertiary;color: #fff;font-family: $font;font-weight: 400;border-radius: 30px;text-transform:none;
+		.btn{padding: 10px 20px; min-width: 350px;display: flex;text-shadow:none;flex-wrap: wrap;align-items:center;justify-content: center;margin:0;font-size:24px;background-color: $tertiary;color: #fff;font-family: $font;font-weight: 400;border-radius: 30px;text-transform:none;
 			i:before {margin-right: 10px;}
             &:hover {background-color: $primary;}
 			span {text-transform: uppercase;font-weight: 700;font-size:24px;margin: 0 8px 0 0;}
@@ -185,7 +185,8 @@ header{position:relative;padding:0;z-index:100;background-color: #fff;
     &:hover i {border-color: #fff;}
 }
 
-#banner { overflow: hidden; background-color: #E5E5E5;padding: 30px 10px;
+#banner { overflow: hidden; background-color: #E5E5E5;padding: 50px 10px;position: relative;
+    &:before {content: ''; position: absolute; left: -125px;top: -40px; height:1101px;width: 827px;background-image: url(assets/images/lp-cosmetic-banner-bkg.png) }
     .flex-ed {flex-wrap: nowrap; padding: 30px 10px; max-width: 1350px; margin: auto; position: relative; align-items: center; justify-content: space-around;}
     figure {  margin: 0;
         position: relative;
@@ -201,8 +202,8 @@ header{position:relative;padding:0;z-index:100;background-color: #fff;
 
     article {position: relative; max-width: 100%; z-index: 10; margin-top: 20px; padding: 10px;
         > img {margin: 20px auto;}
-        h2 {font-size: 50px;}
-        p { font-size: 20px; line-height: 25px; text-transform: uppercase;max-width: 400px;margin: 20px auto;letter-spacing: 4px;}
+        h2 {font-size: 50px;font-weight: 200;}
+        p { font-size: 20px; line-height: 25px; text-transform: uppercase;max-width: 400px;margin: 20px auto;letter-spacing: 5px;}
     }
     h1 {margin: 20px auto 0; line-height: 1.1;font-weight: 400;line-height: 1.2;font-size: 90px;
         span {text-transform: uppercase;}
@@ -210,7 +211,7 @@ header{position:relative;padding:0;z-index:100;background-color: #fff;
     &.playing .flex-ed {display: block; max-width: 1000px; margin: auto;}
 }
 
-#right {position: relative;background-repeat: no-repeat;
+#right {position: relative;background-color: $primary;
     background-size: cover; background-image: url(assets/images/lp-cosmetic-2023-right-bkg.jpg);padding: 60px 10px;
     .contain {max-width: 1140px; margin: 10px auto;text-align: center;}
     p {font-size: 25px;color: #fff; line-height: 30px;}
@@ -219,8 +220,9 @@ header{position:relative;padding:0;z-index:100;background-color: #fff;
     &:before {content: ''; background: url(assets/images/lp-cosmetic-right-before.png);position: absolute; top: -150px; right: 65px;width: 362px; height: 312px;}
 }
 
-#helped {padding: 50px 10px; background-color: #fff; 
-    .flex-ed {max-width: 1170px; margin: 50px auto; justify-content: space-around; padding: 30px 10px; flex-wrap: nowrap; }
+#helped {padding: 50px 10px; background-color: #fff; position: relative;
+    &:before {opacity: 0.5;content: ''; position: absolute; right: -125px;top: -40px; height:2004px;width: 1505px;background-image: url(assets/images/lp-cosmetic-helped-bkg.png) }
+    .flex-ed {max-width: 1300px; margin: 50px auto; justify-content: space-around; padding: 30px 10px; flex-wrap: nowrap; }
     .flex-ed:nth-of-type(2) figure {order: -1;}
     figure {padding: 10px; flex: 0 1 500px; position: relative;
         .smile-before {position: absolute; right: 0; bottom: 0;}
@@ -228,7 +230,7 @@ header{position:relative;padding:0;z-index:100;background-color: #fff;
     article {flex: 0 1 540px; position: relative; padding: 10px 20px 10px 60px; display: flex;
         flex-wrap: wrap;
         align-content: center;
-        p {text-align: justify; font-size: 20px; line-height: 1.5; margin: 0 auto;}
+        p {text-align: justify; font-size: 24px; line-height: 28px; margin: 0 auto;}
       }
     h2 {font-size: 70px;}
     h3 {font-size: 40px; text-align: left; font-weight: 400;margin: 20px 0;}
@@ -239,35 +241,39 @@ header{position:relative;padding:0;z-index:100;background-color: #fff;
     }
 }
 
-#dentists { padding: 60px 10px 40px; background: $primary;
-    .flex-ed {max-width: 1300px; margin: 30px auto; display: flex; justify-content: space-around; flex-wrap: wrap; }
-    article {flex: 0 1 45%; padding: 10px; text-align: left; margin: 10px auto;display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        img {float: left;    margin: 0 10px 10px -20px; }
-        p {text-align: justify;color: #fff;font-size: 25px;line-height: 30px;}
-        h2 {text-align: left;color: #fff;font-size: 50px;margin: 10px;
-            span {color: $tertiary;font-weight: 700;}
+#dentists { padding: 60px 10px 40px; background: $primary;position: relative;
+    .flex-ed {max-width: 1300px; margin: 30px auto; display: flex; justify-content: space-around; flex-wrap: wrap;
+        article {flex: 0 1 45%; padding: 10px; text-align: left; margin: 10px auto;display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            img {float: left;    margin: 0 10px 10px -20px; }
+            p {text-align: justify;color: #fff;font-size: 25px;line-height: 30px;}
+            h2 {text-align: left;color: #fff;font-size: 50px;margin: 0;
+                span {color: $tertiary;font-weight: 700;}
+            }
+            .btn {min-width: 300px;background-color: $tertiary;font-size: 20px;
+                &:hover {background-color: $secondary;}
+            }
         }
-    }
-   .btn {min-width: 300px;background-color: $tertiary;font-size: 24px;
-        &:hover {background-color: $secondary;}
+        figure {position: relative;
+            figcaption {position: absolute;bottom: 0; width: 100%;background-color:rgba(255,255,255,0.9);padding: 10px;text-transform: uppercase;font-weight: 500;font-size: 20px;letter-spacing: 2px;;}
+        }
     }
 }
 
 #assoc {background-color: $secondary; padding: 20px;
     h2 {font-size: 15px;text-transform: uppercase;font-weight: 700;color: #fff;font-family: $font;letter-spacing: 3px;}
-    .flex-ed {justify-content: center;align-items: center;max-width: 1400px;margin: auto;}
+    .flex-ed {justify-content: center;align-items: center;max-width: 1400px;margin: 20px auto 15px;}
 }
 
 footer { padding: 70px 0 0; position: relative; background-color: #333333; 
     .container {display: flex; justify-content: space-around; max-width: 1310px; padding: 10px 0;margin-bottom: 60px;}
-    article {   display: flex; flex-direction: column; justify-content: center; position: relative;  padding: 30px; margin: 0; border:2px solid #fff; max-height: 470px;flex: 0 0 370px;
-        .title {margin-top: 10px;color: #fff;width: 100%; font-family: $font2; font-size: 35px; font-weight: 400;  line-height: 1.2;}
+    article {   display: flex; flex-direction: column; justify-content: center; position: relative;  padding: 30px; margin: 0; border:2px solid #fff; max-height: 490px;flex: 0 0 370px;
+        .title {margin-bottom: auto;margin-top: 10px;color: #fff;width: 100%; font-family: $font2; font-size: 35px; font-weight: 400;  line-height: 1.2;}
         .hours {font-size: 16px; font-weight: 400; margin: 10px 20px; color: #fff; text-align: left; display: table;
-            span {display: flex;
+            span {display: flex;margin: 8px 0;
                 justify-content: space-between;
-                label {display: inline-block; width: 90px; }
+                label {display: inline-block; width: 90px;font-weight: 700; }
             }
         }
         .phone {color: $tertiary; font: 700 34px/1 $font; display: block; margin: 20px 10px; display: block;
@@ -282,7 +288,7 @@ footer { padding: 70px 0 0; position: relative; background-color: #333333;
     }
     .simple {
         form {margin: 20px 0;
-            input, textarea {transition: 0.3s all ease;box-shadow: none;width: auto;}
+            input, textarea {transition: 0.3s all ease;box-shadow: none;width: auto;margin-bottom: 10px;}
             textarea {height: 100px!important;}
             input:focus, textarea:focus {border-top: 10px solid $secondary;height: 50px;}
             .btn {width: 256px;
@@ -295,7 +301,7 @@ footer { padding: 70px 0 0; position: relative; background-color: #333333;
         }
     }
     #started {
-        p {font-size: 16px;color: #fff;}
+        p {font-size: 17px;color: #fff;}
     }
 }
 
@@ -405,19 +411,21 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
     }
     .fix-nav header {padding: 0;}
     #banner {
+        &:before {content: none;}
         .flex-ed {flex-wrap: wrap; padding: 0 10px 20px; }
         article {margin: auto;
             h2 {font-size: 40px;}
         }
-        figure {margin: 40px auto 10px;}
+        figure {margin: 40px auto;}
         h1 {font-size: 70px;line-height: 75px;} 
     }
-    #right {padding: 50px 10px;background: $secondary;
+    #right {padding: 50px 20px;
         h2 {font-size: 37px;}
         &:before {content: none;}
         &:after {content: url(assets/images/lp-cosmetic-right-after.png);opacity: 0.3;}
     }
     #helped {
+        &:before {content: none;}
         .flex-ed {flex-wrap:wrap; margin: auto;padding: 20px 10px;}
         h2 {font-size: 54px;}
         figure {margin-top: 20px;order: -1;}
@@ -427,12 +435,16 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
         }
     }
     #dentists {padding: 10px;
-        article {flex: 0 1 850px;order: -1;
-            img {margin: 0 20px 10px 5px;}
-            h2 {width: 100%;}
-            p {margin-top: 5px;width: 100%;text-align: center;}
+        .flex-ed {
+            article {flex: 0 1 850px;order: -1;
+                img {margin: 0 20px 10px 5px;}
+                h2 {width: 100%;text-align:center;font-size: 40px;}
+                p {margin-top: 5px;width: 100%;text-align: center;}
+            }
+            figure {margin: 10px;
+                figcaption {font-size: 18px;padding: 5px;}
+            }
         }
-        figure {margin: 10px;}
     }
     .title {margin: 0 auto 10px;}
     footer {padding: 0;
@@ -445,6 +457,7 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
                 }
             }
             .phone {margin: 10px auto;font-size: 32px;}
+            .hours {margin: 10px 0;}
         }
     }
 }
@@ -464,6 +477,7 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
         .flex-ed {display: block; margin: auto;}
         .logo {padding: 10px 20px;}
     }
+    .fix-nav header .logo {margin-bottom: 10px;}
     #helped {
         author {font-size: 20px;}
         article {padding: 10px;
@@ -471,7 +485,12 @@ button:focus {outline: none; outline-style: ridge; outline-width: thin; outline-
         }
         .h3 {  padding-left: 30px; line-height: 1.2; font-size: 28px;}
     }
-    .copy {padding: 20px 10px;}
+    .copy {padding: 20px 10px;
+        span {
+            &:not(:first-of-type) {margin: 5px 10px;}
+        }
+        a:last-of-type {width: 100%;margin: 5px 0;}
+    }
     #dentists article h2 {text-align: center;font-size: 38px;}
     #assoc .flex-ed img {margin: 20px;}
 }
